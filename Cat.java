@@ -1,9 +1,20 @@
 public class Cat {
-    private String name;
-    private int appetite;
+     private String name;
+     private int appetite;
+     private boolean satiety;
+
     public Cat(String name, int appetite) {
         this.name = name;
         this.appetite = appetite;
+        this.satiety = false;
+    }
+
+    public boolean isSatiety() {
+        return satiety;
+    }
+
+    public void setSatiety(boolean satiety) {
+        this.satiety = satiety;
     }
 
     public String getName() {
@@ -22,5 +33,8 @@ public class Cat {
         this.appetite = appetite;
     }
 
-    public void eat() { }
+    public void eat(int meal) {
+        if (meal >= this.appetite) this.satiety = true;
+
+    }
 }
